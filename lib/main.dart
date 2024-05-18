@@ -1,4 +1,4 @@
-import 'package:app_eureka/components/tela_inicio.dart';
+import 'package:app_eureka/tela_inicio.dart';
 import 'package:app_eureka/tela_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: RoteadorTela(),
     );

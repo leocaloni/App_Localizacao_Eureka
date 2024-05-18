@@ -4,6 +4,7 @@ import 'package:app_eureka/components/decoracao_campo_texto.dart';
 import 'package:app_eureka/components/quadrado.dart';
 import 'package:app_eureka/core/meu_snackbar.dart';
 import 'package:app_eureka/services/autenticacao_servico.dart';
+import 'package:app_eureka/tela_inicio.dart';
 import 'package:app_eureka/tela_login.dart';
 import 'package:flutter/material.dart';
 
@@ -40,6 +41,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
         }
         else{
           mostrarSnackBar(context: context, texto: "Cadastro realizado com sucesso", isErro: false);
+           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TelaInicio()));
         }
       });
     }
@@ -211,46 +213,9 @@ class _TelaCadastroState extends State<TelaCadastro> {
                     onTap: botaoCadastroClicado,
                   ),
 
-                  //ou continue com
-                  const SizedBox(height: 25),
-
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.blue[400],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Text(
-                            'Ou continue com',
-                            style: TextStyle(
-                                color: Colors.blue[500],
-                                fontFamily: 'Roboto Mono'),
-                          ),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.blue[400],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-
-                  //google botao
-                  const SizedBox(height: 10),
-
-                  const Quadrado(imagePath: 'lib/images/logo_google.png'),
-
                   //nao tem uma conta, cadastre-se agora
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

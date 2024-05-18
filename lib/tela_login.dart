@@ -2,8 +2,10 @@ import 'package:app_eureka/components/botaoLogin.dart';
 import 'package:app_eureka/components/decoracao_campo_texto.dart';
 import 'package:app_eureka/components/quadrado.dart';
 import 'package:app_eureka/core/meu_snackbar.dart';
+import 'package:app_eureka/esqueceu_a_senha_tela.dart';
 import 'package:app_eureka/services/autenticacao_servico.dart';
 import 'package:app_eureka/tela_cadastro.dart';
+import 'package:app_eureka/tela_inicio.dart';
 import 'package:flutter/material.dart';
 
 class TelaLogin extends StatefulWidget {
@@ -31,7 +33,10 @@ class _TelaLoginState extends State<TelaLogin> {
       print("Login valido");
       _autenServico.logarUsuario(email: email, senha: senha).then((String? erro){
         if(erro!= null){
-          mostrarSnackBar(context: context, texto: erro);
+          mostrarSnackBar(context: context, texto: erro,);
+        }
+        else{
+           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TelaInicio()));
         }
       });
     }
@@ -120,14 +125,20 @@ class _TelaLoginState extends State<TelaLogin> {
             
                 //esqueceu a senha
                 const SizedBox(height: 10),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text('Esqueceu a senha?',
-                      style: TextStyle(color: Colors.white, fontFamily: 'Roboto Mono', fontSize: 14) ,),
-                    ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => EsqueceuASenhaTela()));
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text('Esqueceu a senha?',
+                        style: TextStyle(color: Colors.white, fontFamily: 'Roboto Mono', fontSize: 14) ,),
+                      ],
+                    ),
                   ),
                 ),
             
@@ -135,36 +146,8 @@ class _TelaLoginState extends State<TelaLogin> {
               const SizedBox(height: 20),
               BotaoLogin(onTap: botaoLoginClicado,),
             
-                //ou continue com
-              const SizedBox(height: 25),
-            
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: [
-                    Expanded(child: Divider(thickness: 0.5,
-                    color: Colors.blue[400],),
-                    ),
-                
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Text('Ou continue com', style: TextStyle(color: Colors.blue[500], fontFamily: 'Roboto Mono'),),
-                    ),
-                
-                    Expanded(child: Divider(thickness: 0.5,
-                    color: Colors.blue[400],),
-                    )
-                  ],
-                ),
-              ),
-            
-                //google botao
-                const SizedBox(height: 10),
-                
-                const Quadrado(imagePath: 'lib/images/logo_google.png'),
-            
                 //nao tem uma conta, cadastre-se agora
-                const SizedBox(height: 10,),
+                const SizedBox(height: 20,),
                 Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
