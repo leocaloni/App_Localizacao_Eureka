@@ -1,6 +1,5 @@
 import 'package:app_eureka/components/botaoLogin.dart';
 import 'package:app_eureka/components/decoracao_campo_texto.dart';
-import 'package:app_eureka/components/quadrado.dart';
 import 'package:app_eureka/core/meu_snackbar.dart';
 import 'package:app_eureka/esqueceu_a_senha_tela.dart';
 import 'package:app_eureka/services/autenticacao_servico.dart';

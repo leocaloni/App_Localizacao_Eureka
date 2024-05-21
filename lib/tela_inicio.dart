@@ -1,4 +1,5 @@
 import 'package:app_eureka/services/autenticacao_servico.dart';
+import 'package:app_eureka/tela_busca.dart';
 import 'package:app_eureka/tela_perfil.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +16,7 @@ class _TelaInicioState extends State<TelaInicio> {
     const Text(
       'Index 0: Mapa'
     ),
-    const Text(
-      'Index 1: Buscar trabalho'
-    ),
+    TelaBusca(),
     TelaPerfil(),
   ];
 

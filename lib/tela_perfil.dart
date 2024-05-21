@@ -106,7 +106,8 @@ class _TelaPerfilState extends State<TelaPerfil> {
                   _autenServico.deslogarUsuario();
                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => TelaLogin()));},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.indigo[900], // Background color
+                  backgroundColor: Colors.indigo[900],
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)) // Background color
                 ),
                 child: const Text('Sair', style: TextStyle(color: Colors.white, fontFamily: 'Roboto mono', fontWeight: FontWeight.bold),),
               ),
