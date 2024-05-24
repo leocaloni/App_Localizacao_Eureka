@@ -16,6 +16,7 @@ class _TelaBuscaState extends State<TelaBusca> {
   bool trabalhoEncontrado = false;
   String tituloTrabalhoEncontrado = '';
   String descricaoTrabalhoEncontrada = '';
+  int numeroEstandeEncontrado = 0;
   List<String> sugestoesBusca = [];
 
   Future<void> _buscarSugestoes(String termoDeBusca) async {
@@ -78,6 +79,7 @@ class _TelaBuscaState extends State<TelaBusca> {
         Map<String, dynamic> dadosTrabalho = doc.data() as Map<String, dynamic>;
         tituloTrabalhoEncontrado = dadosTrabalho['tituloTrabalho'];
         descricaoTrabalhoEncontrada = dadosTrabalho['descricaoTrabalho'];
+         numeroEstandeEncontrado = dadosTrabalho['numeroEstande'];
         trabalhoEncontrado = true;
       });
     } else {
@@ -229,6 +231,7 @@ class _TelaBuscaState extends State<TelaBusca> {
                         builder: (context) => DescricaoTrabalhoTela(
                           tituloTrabalho: tituloTrabalhoEncontrado,
                           descricaoTrabalho: descricaoTrabalhoEncontrada,
+                          numeroEstandeEncontrado: numeroEstandeEncontrado,
                         ),
                       ),
                     );
