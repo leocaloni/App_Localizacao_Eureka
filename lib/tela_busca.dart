@@ -19,6 +19,8 @@ class _TelaBuscaState extends State<TelaBusca> {
   int numeroEstandeEncontrado = 0;
   List<String> sugestoesBusca = [];
 
+
+// metodo para sugestoes de busca
   Future<void> _buscarSugestoes(String termoDeBusca) async {
   if (termoDeBusca.isEmpty) {
     setState(() {
@@ -59,6 +61,7 @@ class _TelaBuscaState extends State<TelaBusca> {
   }
 }
 
+    //metodo para buscar trabalhos
 
   Future<void> _buscarTrabalhos(String termoDeBusca) async {
     CollectionReference trabalhosRef = FirebaseFirestore.instance.collection('trabalhos');
