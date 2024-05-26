@@ -5,7 +5,7 @@ Bem-vindo ao Localiza Eureka, o aplicativo oficial do evento Eureka! Nossa miss�
 ## Funcionalidades
 
 ### Navegação para Estandes
-- **Caminho para os estandes**: Receba orientações detalhadas para chegar até os estandes de cada grupo no evento Eureka.
+- **Caminho para os estandes**: Receba o caminho até o estande selecionado no evento Eureka.
 - **Mapa interativo**: Visualize o mapa do evento e encontre a localização exata de cada estande.
 
 ### Pesquisa Avançada
@@ -13,13 +13,13 @@ Bem-vindo ao Localiza Eureka, o aplicativo oficial do evento Eureka! Nossa miss�
 - **Procura pelo nome do trabalho**: Busque estandes pelo título do trabalho apresentado.
 
 ### Conta de Usuário
-- **Login e Cadastro**: Crie uma conta para salvar suas pesquisas e estandes favoritos.
-- **Perfil de usuário**: Acesse e edite suas informações de perfil a qualquer momento.
+- **Login e Cadastro**: Crie uma conta para utilizar o app e ter uma melhor experiência no evento.
+- **Perfil de usuário**:  Acesse suas informções na aba perfil, caso esqueça sua senha é possível alterá-la.
 
 ## Tecnologias Utilizadas
 
 - **Flutter**: Todo o desenvolvimento do aplicativo foi realizado usando o Flutter, garantindo uma experiência de usuário suave e responsiva tanto em dispositivos Android quanto iOS.
-- **Banco de Dados**: Utilizamos um banco de dados robusto para armazenar informações dos estandes, usuários e suas pesquisas, assegurando que os dados estejam sempre disponíveis e atualizados.
+- **Banco de Dados**: Utilizamos o sistema do Firebase e cloud Firestore para armazenar informações dos estandes, usuários e suas pesquisas, assegurando que os dados estejam sempre disponíveis e atualizados.
 
 ## Como Usar
 
