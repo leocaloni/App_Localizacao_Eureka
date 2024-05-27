@@ -6,12 +6,16 @@ class DescricaoTrabalhoTela extends StatefulWidget {
   final String tituloTrabalho;
   final String descricaoTrabalho;
   final int numeroEstandeEncontrado;
+  final List<String> historicoTrabalho;
+  final List<String> historicoAluno;
 
   const DescricaoTrabalhoTela({
     Key? key,
     required this.tituloTrabalho,
     required this.descricaoTrabalho,
     required this.numeroEstandeEncontrado,
+    required this.historicoTrabalho,
+    required this.historicoAluno,
   }) : super(key: key);
 
   @override
@@ -128,7 +132,7 @@ class _DescricaoTrabalhoTelaState extends State<DescricaoTrabalhoTela> {
               //botao para voltar
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)  => TelaInicio()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)  => TelaInicio()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo[900],
