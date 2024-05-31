@@ -30,15 +30,5 @@ Bem-vindo ao Localiza Eureka, o aplicativo oficial do evento Eureka! Nossa miss�
 5. **Mapa Interativo**: Explore o mapa do evento para descobrir mais sobre a disposição dos estandes e outras facilidades.
 6. **Favoritos**: Salve estandes favoritos para acessá-los rapidamente depois.
 
-## Contribuição
-
-Se você deseja contribuir para o desenvolvimento do Localiza Eureka, siga os passos abaixo:
-
-1. **Fork o repositório**: Faça um fork do repositório oficial do Localiza Eureka no GitHub.
-2. **Clone o repositório**: Clone o repositório para a sua máquina local.
-3. **Crie uma branch**: Crie uma nova branch para a sua feature ou correção (`git checkout -b feature/nova-feature`).
-4. **Commit suas mudanças**: Faça commit das suas alterações (`git commit -m 'Adiciona nova feature'`).
-5. **Push para a branch**: Faça push da sua branch (`git push origin feature/nova-feature`).
-6. **Abra um Pull Request**: Abra um Pull Request no repositório original.
 
 Obrigado por usar o Localiza Eureka! Esperamos que tenha uma experiência incrível no evento Eureka.
