@@ -66,7 +66,7 @@ class _TelaPerfilState extends State<TelaPerfil> {
                 margin: const EdgeInsets.symmetric(horizontal: 20),
               ),
 
-              const SizedBox(height: 50,),
+              const SizedBox(height: 150,),
 
               Text(
                 'Bem Vindo, $userName',

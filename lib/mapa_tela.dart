@@ -108,7 +108,6 @@ class _MapaTelaState extends State<MapaTela> {
                     ),
                   ],
                 ),
-
               ),
 
               //passa as informacoes para achar o caminho
@@ -160,6 +159,7 @@ class _MapaTelaState extends State<MapaTela> {
       ),
     );
   }
+  
 }
 
 
