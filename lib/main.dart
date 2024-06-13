@@ -27,6 +27,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+//verifica se o usuario ja esta logado
+
 class RoteadorTela extends StatelessWidget {
   const RoteadorTela({Key? key}) : super(key: key);
 

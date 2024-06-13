@@ -6,6 +6,7 @@ class BotaoCadastro extends StatelessWidget {
 
   const BotaoCadastro({super.key, required this.onTap});
 
+  //botao de cadastro
   @override
   Widget build(BuildContext context) {
     return Container(

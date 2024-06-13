@@ -32,6 +32,7 @@ class _TelaBuscaState extends State<TelaBusca> {
     _mostraHistoricoAluno = true;
   }
 
+  //metodo para buscar as sugestões de busca
   Future<void> _buscarSugestoes(String termoDeBusca) async {
     if (termoDeBusca.isEmpty) {
       setState(() {
@@ -51,7 +52,7 @@ class _TelaBuscaState extends State<TelaBusca> {
         querySnapshot = await trabalhosRef
             .where('tituloTrabalho', isGreaterThanOrEqualTo: termoDeBusca)
             .where('tituloTrabalho',
-                isLessThanOrEqualTo: termoDeBusca + '\uf8ff')
+                isLessThanOrEqualTo: termoDeBusca + '\uf8ff')  //garante que a sugestão começa com o termo de busca
             .get();
       } else {
         querySnapshot = await trabalhosRef
@@ -59,7 +60,8 @@ class _TelaBuscaState extends State<TelaBusca> {
             .where('nomeAluno', isLessThanOrEqualTo: termoDeBusca + '\uf8ff')
             .get();
       }
-
+      
+      //atualiza as sugestões dinâmicamente
       List<String> novasSugestoes = querySnapshot.docs.map((doc) {
         Map<String, dynamic> dados = doc.data() as Map<String, dynamic>;
         return buscarPorTrabalho
@@ -75,6 +77,8 @@ class _TelaBuscaState extends State<TelaBusca> {
     }
   }
 
+
+  //metodo para buscar trabalhos
   Future<void> _buscarTrabalhos(String termoDeBusca) async {
     CollectionReference trabalhosRef =
         FirebaseFirestore.instance.collection('trabalhos');
@@ -90,6 +94,7 @@ class _TelaBuscaState extends State<TelaBusca> {
     }
 
     if (querySnapshot.docs.isNotEmpty) {
+      //pega as informações necessárias do trabalho para passar para a próxima tela
       querySnapshot.docs.forEach((doc) {
         Map<String, dynamic> dadosTrabalho = doc.data() as Map<String, dynamic>;
         tituloTrabalhoEncontrado = dadosTrabalho['tituloTrabalho'];
@@ -114,9 +119,15 @@ class _TelaBuscaState extends State<TelaBusca> {
         child: Center(
           child: Column(
             children: [
+
               const SizedBox(height: 50),
+
+              //logo
               Image.asset('lib/images/logo-IMT-SemNome-Branca.png', height: 50),
+
               const SizedBox(height: 10),
+
+              //Eureka 2024
               const Text(
                 'EUREKA 2024',
                 style: TextStyle(
@@ -124,14 +135,20 @@ class _TelaBuscaState extends State<TelaBusca> {
                     fontFamily: 'Roboto Mono',
                     color: Colors.white),
               ),
+
               const SizedBox(height: 20),
+
+              //barra
               Container(
                 width: double.infinity,
                 height: 2.0,
                 color: Colors.white,
                 margin: const EdgeInsets.symmetric(horizontal: 20),
               ),
+
               const SizedBox(height: 75),
+
+              //Selecione o metodo de busc
               const Text(
                 'Selecione o método de busca:',
                 style: TextStyle(
@@ -139,7 +156,10 @@ class _TelaBuscaState extends State<TelaBusca> {
                     fontFamily: 'Roboto Mono',
                     color: Colors.white),
               ),
+
               const SizedBox(height: 50),
+
+              //opções de busca
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -187,7 +207,10 @@ class _TelaBuscaState extends State<TelaBusca> {
                   ),
                 ],
               ),
+
               const SizedBox(height: 50),
+
+              //textField para a busca
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: TextField(
@@ -205,6 +228,7 @@ class _TelaBuscaState extends State<TelaBusca> {
 
               const SizedBox(height: 20,),
 
+              //histórico de busca feito com fila
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 25.0),
                 decoration: BoxDecoration(
@@ -263,6 +287,8 @@ class _TelaBuscaState extends State<TelaBusca> {
                   ],
                 ),
               ),
+
+              //lista de sugestões
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -290,7 +316,10 @@ class _TelaBuscaState extends State<TelaBusca> {
                   );
                 },
               ),
+
               const SizedBox(height: 10),
+
+              //botao para buscar
               ElevatedButton(
                 onPressed: () async {
                   String termoDeBusca = _controllerBusca.text;
@@ -343,14 +372,21 @@ class _TelaBuscaState extends State<TelaBusca> {
   }
 }
 
+
+//fila dos históricos
+
 class Queue<T> {
   List<T> _elements = [];
   final int _maxSize;
 
   Queue(this._maxSize);
 
+  bool isFull() {
+    return _elements.length == _maxSize;
+  }
+
   void enqueue(T element) {
-    if (_elements.length == _maxSize) {
+    if (isFull()) {
       _elements.removeAt(0);
     }
     if (!_elements.contains(element)) {
@@ -361,6 +397,8 @@ class Queue<T> {
   List<T> get elements => List.unmodifiable(_elements);
 }
 
+
+//classe com os históricos
 class HistoricoBusca {
   static final Queue<String> historicoTrabalho = Queue<String>(3);
   static final Queue<String> historicoAluno = Queue<String>(3);

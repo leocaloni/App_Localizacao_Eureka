@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 class AutenticacaoServico {
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
+
+  //metodo de cadastrar usuario
   Future<String?> cadastrarUsuario({
     required String nome,
     required String email,
@@ -28,6 +30,7 @@ class AutenticacaoServico {
     }
   }
 
+  //metodo de logar usuario
   Future<String?> logarUsuario({
     required String email,
     required String senha,
@@ -46,6 +49,7 @@ class AutenticacaoServico {
     }
   }
 
+  //metodo de deslogar usuario
   Future<void> deslogarUsuario() async {
     return _firebaseAuth.signOut();
   }

@@ -10,6 +10,8 @@ class TelaPerfil extends StatefulWidget {
 
 class _TelaPerfilState extends State<TelaPerfil> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  //Informacoes a serem exibidas no perfil
   User? user;
   String userName = "Carregando...";
   String userEmail = "Carregando...";
@@ -23,6 +25,7 @@ class _TelaPerfilState extends State<TelaPerfil> {
     _fetchUserData();
   }
 
+  //metodo para pegar as informações do perfil
   Future<void> _fetchUserData() async {
     user = _auth.currentUser;
     if (user != null) {
@@ -46,6 +49,7 @@ class _TelaPerfilState extends State<TelaPerfil> {
 
               const SizedBox(height: 50,),
 
+              //logo
               Image.asset('lib/images/logo-IMT-SemNome-Branca.png', height: 50,),
               const SizedBox(height: 10,),
               const Text(
@@ -58,7 +62,8 @@ class _TelaPerfilState extends State<TelaPerfil> {
               ),
 
               const SizedBox(height: 20,),
-
+              
+              //barra
               Container(
                 width: double.infinity,
                 height: 2.0,
@@ -68,6 +73,7 @@ class _TelaPerfilState extends State<TelaPerfil> {
 
               const SizedBox(height: 150,),
 
+              //nome do Usuario
               Text(
                 'Bem Vindo, $userName',
                 style: const TextStyle(
@@ -79,6 +85,7 @@ class _TelaPerfilState extends State<TelaPerfil> {
 
               const SizedBox(height: 25,),
 
+              //email do Usuario
               Text(
                 'Email: $userEmail',
                 style: const TextStyle(
@@ -90,6 +97,7 @@ class _TelaPerfilState extends State<TelaPerfil> {
 
               const SizedBox(height: 10,),
 
+              //parentesco do Usuario
               Text(
                 'Parentesco: $userParentesco',
                 style: const TextStyle(
@@ -100,7 +108,8 @@ class _TelaPerfilState extends State<TelaPerfil> {
               ),
 
               const SizedBox(height: 20,),
-
+              
+              //botao de logout
               ElevatedButton(
                 onPressed: () { 
                   _autenServico.deslogarUsuario();

@@ -12,7 +12,6 @@ class MapaTela extends StatefulWidget {
 class _MapaTelaState extends State<MapaTela> {
 
   //lista para o mapa
-
   final List<Map<String, dynamic>> estandes = [
     {'numero': 60, 'posicao': Offset(0, 0)},
     {'numero': 21, 'posicao': Offset(100, 0)},
@@ -58,13 +57,15 @@ class _MapaTelaState extends State<MapaTela> {
 
                     const SizedBox(height: 50),
 
+                    //logo
                     Image.asset(
                       'lib/images/logo-IMT-SemNome-Branca.png',
                       height: 50,
                     ),
 
                     const SizedBox(height: 10),
-                    
+
+                    //eureka2024
                     const Text(
                       'EUREKA 2024',
                       style: TextStyle(
@@ -76,6 +77,7 @@ class _MapaTelaState extends State<MapaTela> {
 
                     const SizedBox(height: 20),
 
+                    //barra
                     Container(
                       width: double.infinity,
                       height: 2.0,
@@ -86,7 +88,6 @@ class _MapaTelaState extends State<MapaTela> {
                     const SizedBox(height: 60),
 
                     //mapa
-
                     Container(
                       width: mapaSize.width, 
                       height: mapaSize.height,
@@ -129,7 +130,6 @@ class _MapaTelaState extends State<MapaTela> {
 
 
   //widget para construção dos estandes
-
   Widget _buildEstandeWidget(String estande) {
     return Container(
       width: 60, 
@@ -145,7 +145,6 @@ class _MapaTelaState extends State<MapaTela> {
   }
 
   //widget para a construção da porta
-
   Widget _buildPortaWidget() {
     return Container(
       width: 30, // Largura do estande
@@ -164,7 +163,6 @@ class _MapaTelaState extends State<MapaTela> {
 
 
 //classe para criação dos caminhos
-
 class PathPainter extends CustomPainter {
   final int numeroEstandeEncontrado;
   final List<Map<String, dynamic>> estandesTela;
@@ -197,7 +195,6 @@ class PathPainter extends CustomPainter {
       path.lineTo(portaPosition.dx - 45, portaPosition.dy - 7);
       
       //caminhos para os estandes
-      
       if(estandeEncontrado['numero'] == 133) {
         path.lineTo(portaPosition.dx - 45, estandePosition.dy + 75);
         path.lineTo(estandePosition.dx + 40, estandePosition.dy + 75);

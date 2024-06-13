@@ -17,6 +17,7 @@ final _emailController = TextEditingController();
 
 class _EsqueceuASenhaTelaState extends State<EsqueceuASenhaTela> {
 
+  //metodo para enviar o email de troca de senha
   void botaoEnviarPressionado () {
   String email = _emailController.text;
 
@@ -45,13 +46,16 @@ class _EsqueceuASenhaTelaState extends State<EsqueceuASenhaTela> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+
                   const SizedBox(height: 50),
+
                   //logo
                   Image.asset('lib/images/logo-IMT-Completa-Branca.png',
                       height: 100),
 
-                  //Eureka 2024
                   const SizedBox(height: 10),
+
+                   //Eureka 2024
                   const Text(
                     'EUREKA 2024',
                     style: TextStyle(
@@ -61,6 +65,8 @@ class _EsqueceuASenhaTelaState extends State<EsqueceuASenhaTela> {
                   ),
 
                   const SizedBox(height: 50),
+
+                  //recuperacao de senha
                   const Text(
                     'Recuperação de senha',
                     style: TextStyle(
@@ -69,9 +75,9 @@ class _EsqueceuASenhaTelaState extends State<EsqueceuASenhaTela> {
                         color: Colors.white),
                   ),
 
-                  const SizedBox(
-                    height: 25,
-                  ),
+                  const SizedBox(height: 25,),
+
+                  //textField para o email
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: TextFormField(
@@ -93,6 +99,8 @@ class _EsqueceuASenhaTelaState extends State<EsqueceuASenhaTela> {
                   ),
 
                   const SizedBox(height: 20),
+
+                  //texto informativo
                   const Text(
                     'Um email será enviado para você trocar sua senha.',
                     style: TextStyle(
@@ -101,9 +109,9 @@ class _EsqueceuASenhaTelaState extends State<EsqueceuASenhaTela> {
                         color: Colors.white),
                   ),
 
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20,),
+
+                  //botao para enviar o email
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: ElevatedButton(
@@ -125,6 +133,8 @@ class _EsqueceuASenhaTelaState extends State<EsqueceuASenhaTela> {
                   ),
 
                   const SizedBox(height: 20,),
+
+                  //voltar para o inicio
                   GestureDetector( 
                     onTap: () {
                       Navigator.push(

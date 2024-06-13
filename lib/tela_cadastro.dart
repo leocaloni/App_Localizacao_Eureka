@@ -25,6 +25,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
 
   final _formKey = GlobalKey<FormState>();
 
+  //metodo para cadastrar Usuario
   void botaoCadastroClicado() {
     String nome = _nomeController.text;
     String email= _emailController.text;

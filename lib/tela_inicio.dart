@@ -14,6 +14,7 @@ class _TelaInicioState extends State<TelaInicio> {
 
   final AutenticacaoServico _autenticacaoServico = AutenticacaoServico();
 
+  //Barra de navegação com as telas
   @override
   Widget build(BuildContext context) {
     List<Widget> _widgetOptions = <Widget>[

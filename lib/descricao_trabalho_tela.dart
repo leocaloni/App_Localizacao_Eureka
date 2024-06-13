@@ -34,6 +34,8 @@ class _DescricaoTrabalhoTelaState extends State<DescricaoTrabalhoTela> {
             children: [
 
               const SizedBox(height: 50),
+
+              //logo
               Image.asset(
                 'lib/images/logo-IMT-SemNome-Branca.png',
                 height: 50,
@@ -41,6 +43,7 @@ class _DescricaoTrabalhoTelaState extends State<DescricaoTrabalhoTela> {
 
               const SizedBox(height: 10),
 
+              //eureka 2024
               const Text(
                 'EUREKA 2024',
                 style: TextStyle(
@@ -51,6 +54,7 @@ class _DescricaoTrabalhoTelaState extends State<DescricaoTrabalhoTela> {
 
               const SizedBox(height: 20),
 
+              //barra
               Container(
                 width: double.infinity,
                 height: 2.0,
@@ -73,6 +77,7 @@ class _DescricaoTrabalhoTelaState extends State<DescricaoTrabalhoTela> {
               ),
 
               const SizedBox(height: 25),
+
               //numero do estande
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -86,6 +91,7 @@ class _DescricaoTrabalhoTelaState extends State<DescricaoTrabalhoTela> {
               ),
 
               const SizedBox(height: 10),
+
               //descricao do trabalho
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -100,6 +106,7 @@ class _DescricaoTrabalhoTelaState extends State<DescricaoTrabalhoTela> {
               ),
 
               const SizedBox(height: 25),
+              
               //botao para achar caminho
               ElevatedButton(
                 onPressed: () {

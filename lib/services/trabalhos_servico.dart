@@ -6,10 +6,13 @@ import 'package:csv/csv.dart';
 class TrabalhosServico {
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+  //meotdo para adicionar elementos ao firestore
   Future<void> _addDataToFirestore(Map<String, dynamic> data, String collection) async {
     await _firestore.collection(collection).add(data);
   }
 
+
+  //metodo de insercao no firestore de um arquivo csv
   Future<void> uploadCsvData(String filePath, String collection) async {
     String csvString = await rootBundle.loadString(filePath);
     List<List<dynamic>> csvData = CsvToListConverter().convert(csvString);
